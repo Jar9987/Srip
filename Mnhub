@@ -447,10 +447,8 @@ local CreditsTab = Window:MakeTab({
 	PremiumOnly = false
 })
 
-CreditsTab:AddParagraph("Made By","hassanxzayn")
-CreditsTab:AddParagraph("Instagram","make sure to follow me on instagram @hassanxzayn")
-CreditsTab:AddParagraph("When Devil's Hub Updates ?","When Game Updates Devil's Hub Automatically Updates")
-CreditsTab:AddParagraph("Report","report any bug at hassanxzayn@gmail.com or Dm me on instagram")
+
+CreditsTab:AddParagraph("made","Made IN vietnam")
 
 
 coroutine.resume(NotificationCoroutine)
