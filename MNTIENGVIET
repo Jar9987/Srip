@@ -131,7 +131,7 @@ local EntityCoroutine = coroutine.create(function()
     table.insert(FigureChams,ApplyEntityChams(Entity))
 end)
 
-VisualsTab:AddParagraph("Thanks For Using Devil's Hub","hey user thanks for using Devil's Hub keep supporting me to make amazing things and make sure to follow me on instagram : @hassanxzayn")
+VisualsTab:AddParagraph("thank for use mnhub")
 
 local GameTab = Window:MakeTab({
 	Name = "chính",
