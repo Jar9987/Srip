@@ -315,7 +315,7 @@ GameTab:AddButton({
         game.Players.LocalPlayer.Character:PivotTo(CF(CurrentDoor.Door.Position))
   	end    
 })
-GameTab:AddParagraph("Warning","You may need to open/close the panel a few times for this to work, fixing soon. follow to see updates @hassanxzayn")
+GameTab:AddParagraph("hi")
 
 --// ok actual code starts here
 
@@ -408,7 +408,7 @@ local NotificationCoroutine = coroutine.create(function()
             else
                 OrionLib:MakeNotification({
                     Name = "Warning!",
-                    Content = "Rush has spawned, hide!",
+                    Content = "rush đến!",
                     Time = 5
                 })
             end
@@ -416,7 +416,7 @@ local NotificationCoroutine = coroutine.create(function()
             if OrionLib.Flags["AvoidRushToggle"].Value == true then
                 OrionLib:MakeNotification({
                     Name = "Warning!",
-                    Content = "Avoiding Ambush. Please wait.",
+                    Content = "chờ một chút ambush sẽ đi qua",
                     Time = 5
                 })
                 local OldPos = game.Players.LocalPlayer.Character.HumanoidRootPart.Position
@@ -431,7 +431,7 @@ local NotificationCoroutine = coroutine.create(function()
             else
                 OrionLib:MakeNotification({
                     Name = "Warning!",
-                    Content = "Ambush has spawned, hide!",
+                    Content = "ambush đến",
                     Time = 5
                 })
             end
