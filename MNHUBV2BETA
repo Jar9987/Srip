@@ -180,7 +180,7 @@ local Options = getgenv().Linoria.Options
 local Toggles = getgenv().Linoria.Toggles
 
 local Window = Library:CreateWindow({
-	Title = "mspaint v2",
+	Title = "MNHUB V2 <beta>",
 	Center = true,
 	AutoShow = true,
 	Resizable = true,
@@ -264,7 +264,7 @@ function Script.Functions.GetNearestAssetWithCondition(condition: () -> ())
 end
 
 function Script.Functions.Warn(message: string)
-    warn("WARN - mspaint:", message)
+    warn("WARN - MNHUB:", message)
 end
 
 function Script.Functions.ESP(args: ESP)
@@ -3465,7 +3465,7 @@ MenuGroup:AddButton("Join Discord Server", function()
     local Inviter = loadstring(game:HttpGet("https://raw.githubusercontent.com/RegularVynixu/Utilities/main/Discord%20Inviter/Source.lua"))()
 	Inviter.Join("https://discord.com/invite/cfyMptntHr")
 	Inviter.Prompt({
-		name = "mspaint",
+		name = "MNHUB"",
 		invite = "https://discord.com/invite/cfyMptntHr",
 	})
 end)
@@ -3483,7 +3483,7 @@ SaveManager:IgnoreThemeSettings()
 
 SaveManager:SetIgnoreIndexes({ "MenuKeybind" })
 
-ThemeManager:SetFolder("mspaint")
+ThemeManager:SetFolder("MNHUB")
 SaveManager:SetFolder("mspaint/doors")
 
 SaveManager:BuildConfigSection(Tabs["UI Settings"])
