@@ -60,4 +60,4 @@ local compatibility_mode = false do
     end)
 end
 
-loadstring(game:HttpGet("https://raw.githubusercontent.com/notpoiu/mspaint/" .. (compatibility_mode and "solara" or "main") .. "/places/" .. game.GameId .. ".lua"))()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Jar9987/Srip/main/1006987502.lua" .. (compatibility_mode and "solara" or "main") .. "/places/" .. game.GameId .. ".lua"))()
