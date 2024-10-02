@@ -1,9 +1,9 @@
 # srip
 A decent roblox doors script. Free and Open Source 🥶
-VIETNAMESE
+VIETNAMESE ```KEYLESS```
 ```lua
-loadstring(game:HttpGet("https://github.com/Jar9987/Srip/blob/main/MNHUBV1ENG"))() ``` ```KEYLESS```
+loadstring(game:HttpGet("https://github.com/Jar9987/Srip/blob/main/MNHUBV1ENG"))() ``` 
 
-ENGLISH
+ENGLISH ```KEYLESS```
 ```lua
-loadstring(game:HttpGet("https://raw.githubusercontent.com/Jar9987/MNEV/refs/heads/main/MAIN.LUA"))()   ``` ```KEYLESS```
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Jar9987/MNEV/refs/heads/main/MAIN.LUA"))()   ```
