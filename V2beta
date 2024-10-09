@@ -247,3 +247,7 @@ Text = "THANKS YOU FOR USE MNHUB V2 BETA",
 end
   end 
     end)
+
+Section:NewButton("FLY GUI V#", "ButtonInfo", function()
+    print("Clicked")
+loading:("loadstring(game:HttpGet("https://raw.githubusercontent.com/XNEOFF/FlyGuiV3/main/FlyGuiV3.txt"))()")
