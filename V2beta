@@ -9,7 +9,7 @@ end
 local Window = Library.CreateLib("MNHUB V2[beta]", "DarkTheme")
 local Tab = Window:NewTab("main")
 
-Section:NewToggle("auto skip room", "enable/disable fly", function(state)
+Section:NewToggle("auto skip room", "", function(state)
     if state then
         print("enable")
     else
@@ -123,8 +123,127 @@ Section:NewToggle("Tanti A-90", "ANTI A-90", function(state)
                 Toggles.AntiA90:SetValue(true)
             end
 
-            if not mainGame then return end
-            local module = mainGame:FindFirstChild("A90", true) or mainGame:FindFirstChild("_A90", true)
-        
+
             if module then
                 module.Name = value and "_A90" or "A90"rint("Toggle Off")
+
+
+local Tab = Window:NewTab("ESP")
+
+ 
+      function Script.Functions.ESP(args: ESP)
+        if not args.Object then return Script.Functions.Warn("ESP Object is nil") end
+    
+        local ESPManager = {
+            Object = args.Object,
+            Text = args.Text or "No Text",
+            Color = args.Color or Color3.new(),
+            Offset = args.Offset or Vector3.zero,
+            IsEntity = args.IsEntity or false,
+            IsDoubleDoor = args.IsDoubleDoor or false,
+            Type = args.Type or "None",
+            OnDestroy = args.OnDestroy or nil,
+    
+            Invisible = false,
+            Humanoid = nil
+        }
+    
+        if ESPManager.IsEntity and ESPManager.Object.PrimaryPart then
+            if ESPManager.Object.PrimaryPart.Transparency == 1 then
+                ESPManager.Invisible = true
+                ESPManager.Object.PrimaryPart.Transparency = 0.99
+            end
+    
+            local humanoid = ESPManager.Object:FindFirstChildOfClass("Humanoid")
+            if not humanoid then humanoid = Instance.new("Humanoid", ESPManager.Object) end
+            ESPManager.Humanoid = humanoid
+        end
+
+Section:NewToggle("doors esp", "ToggleInfo", function(state)
+    if state then
+        print("Toggle On")
+    else
+        print("Toggle Off")
+if door then
+            local doorNumber = tonumber(room.Name) + 1
+            if isMines then
+                doorNumber += 100
+            end
+    
+            local opened = door:GetAttribute("Opened")
+            local locked = room:GetAttribute("RequiresKey")
+    
+            local doorState = if opened then "[Opened]" elseif locked then "[Locked]" else ""
+            local doorIdx = Script.Functions.RandomString()
+    
+            local doorEsp = Script.Functions.ESP({
+                Type = "Door",
+                Object = door:WaitForChild("Door"),
+                Text = string.format("Door %s %s", doorNumber, doorState),
+                Color = Options.DoorEspColor.Value,
+    
+                OnDestroy = function()
+                    if Script.FeatureConnections.Door[doorIdx] then Script.FeatureConnections.Door[doorIdx]:Disconnect() end
+                end
+            })
+                Script.FeatureConnections.Door[doorIdx] = door:GetAttributeChangedSignal("Opened"):Connect(function()
+                if doorEsp then doorEsp.SetText(string.format("Door %s [Opened]", doorNumber)) end
+                if Script.FeatureConnections.Door[doorIdx] then Script.FeatureConnections.Door[doorIdx]:Disconnect() end
+            end)
+        end
+
+
+Section:NewToggle("esp key", "ToggleInfo", function(state)
+    if state then
+        print("Toggle On")
+    else
+        print("Toggle Off")
+ elseif child.Name == "ElectricalKeyObtain" then
+            Script.Functions.ESP({
+                Type = "Objective",
+                Object = child,
+                Text = "Electrical Key",
+                Color = Options.ObjectiveEspColor.Value
+
+ elseif child.Name == "KeyObtain" then
+            Script.Functions.ESP({
+                Type = "Objective",
+                Object = child,
+                Text = "Key",
+                Color = Options.ObjectiveEspColor.Value
+            })
+end)
+
+Section:NewToggle("gate esp", "ToggleInfo", function(state)
+    if state then
+        print("Toggle On")
+    else
+        print("Toggle Off")
+  elseif child.Name == "LeverForGate" then
+            Script.Functions.ESP({
+                Type = "Objective",
+                Object = child,
+                Text = "Gate Lever",
+                Color = Options.ObjectiveEspColor.Value
+            })
+Section:NewToggle("guidacelight", "ToggleInfo", function(state)
+    if state then
+        print("Toggle On")
+    else
+        print("Toggle Off")
+  guidance.AncestryChanged:Connect(function()
+            if not guidance:IsDescendantOf(workspace) then
+                if Script.Temp.Guidance[guidance] then Script.Temp.Guidance[guidance] = nil end
+                if part then part:Destroy() end
+                if guidanceEsp then guidanceEsp.Destroy() end
+            end
+        end)
+    end
+end
+
+game:GetService("StarterGui"):SetCore("SendNotification",{
+Title = "Script loaded enjoy!",
+Text = "THANKS YOU FOR USE MNHUB V2 BETA", 
+end
+  end 
+    end)
