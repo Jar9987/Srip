@@ -1,0 +1,130 @@
+local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))() 
+
+game:GetService("StarterGui"):SetCore("SendNotification",{
+Title = "Script loaded enjoy!",
+Text = "THANKS YOU FOR USE MNHUB V2 BETA", 
+end
+  end 
+    end)
+local Window = Library.CreateLib("MNHUB V2[beta]", "DarkTheme")
+local Tab = Window:NewTab("main")
+
+Section:NewToggle("auto skip room", "enable/disable fly", function(state)
+    if state then
+        print("enable")
+    else
+        print("disable")
+
+local AutoSkipCoro = coroutine.create(function()
+        while true do
+            task.wait()
+            pcall(function()
+            if OrionLib.Flags["AutoSkip"].Value == true and game:GetService("ReplicatedStorage").GameData.LatestRoom.Value < 100 then
+                local HasKey = false
+                local LatestRoom = game:GetService("ReplicatedStorage").GameData.LatestRoom.Value
+                local CurrentDoor = workspace.CurrentRooms[tostring(LatestRoom)]:WaitForChild("Door")
+                for i,v in ipairs(CurrentDoor.Parent:GetDescendants()) do
+                    if v.Name == "KeyObtain" then
+                        HasKey = v
+                    end
+                end
+                if HasKey then
+                    game.Players.LocalPlayer.Character:PivotTo(CF(HasKey.Hitbox.Position))
+                    task.wait(0.3)
+                    fireproximityprompt(HasKey.ModulePrompt,0)
+                    game.Players.LocalPlayer.Character:PivotTo(CF(CurrentDoor.Door.Position))
+                    task.wait(0.3)
+                    fireproximityprompt(CurrentDoor.Lock.UnlockPrompt,0)
+                end
+                if LatestRoom == 50 then
+                    CurrentDoor = workspace.CurrentRooms[tostring(LatestRoom+1)]:WaitForChild("Door")
+                end
+                game.Players.LocalPlayer.Character:PivotTo(CF(CurrentDoor.Door.Position))
+                task.wait(0.3)
+                CurrentDoor.ClientOpen:FireServer()
+            end
+        end)
+        end
+end)
+
+Section:NewToggle("avoild rush/ambush", "ToggleInfo", function(state)
+    if state then
+        print("Toggle On")
+    else
+        print("Toggle Off")
+workspace.ChildAdded:Connect(function(inst)
+        if inst.Name == "RushMoving" and OrionLib.Flags["MobToggle"].Value == true then
+            if OrionLib.Flags["AvoidRushToggle"].Value == true then
+                OrionLib:MakeNotification({
+                    Name = "Warning!",
+                    Content = "Avoiding Rush. Please wait.",
+                    Time = 5
+                })
+                local OldPos = game.Players.LocalPlayer.Character.HumanoidRootPart.Position
+                local con = game:GetService("RunService").Heartbeat:Connect(function()
+                    game.Players.LocalPlayer.Character:MoveTo(OldPos + Vector3.new(0,20,0))
+                end)
+
+
+Section:NewToggle("delete seek", "anti seek", function(state)
+    if state then
+        print("Toggle On")
+    else
+        print("Toggle Off")
+game:GetService("Workspace").CurrentRooms.DescendantAdded:Connect(function(descendant)
+    if OrionLib.Flags["NoSeek"].Value == true and descendant.Name == ("Seek_Arm" or "ChandelierObstruction") then
+        task.spawn(function()
+            wait()
+            descendant:Destroy()
+end)
+
+Section:NewToggle("rush notification", "ToggleInfo", function(state)
+    if state then
+        print("Toggle On")
+    else
+        print("Toggle Off")
+ game.Players.LocalPlayer.Character:MoveTo(OldPos)
+            else
+                OrionLib:MakeNotification({
+                    Name = "Warning!",
+                    Content = "Rush has spawned, hide!",
+                    Time = 5
+                })
+end)
+
+local Tab = Window:NewTab("THE ROOMS")
+
+Section:NewToggle("auto room", "auto a-1000", function(state)
+    if state then
+        print("Toggle On")
+    else
+        print("Toggle Off")
+         Rooms_AutomationGroupBox:AddLabel("Recommended Settings:\nSpeed Bypass and Noclip disabled", true)
+
+            Rooms_AutomationGroupBox:AddDivider()
+
+            Rooms_AutomationGroupBox:AddToggle("AutoRoomsDebug", { 
+                Text = "Show Debug Info",
+                Default = false
+            })
+            
+            Rooms_AutomationGroupBox:AddToggle("ShowAutoRoomsPathNodes", { 
+                Text = "Show Pathfinding Nodes",
+                Default = false
+            })
+
+        end
+
+Section:NewToggle("Tanti A-90", "ANTI A-90", function(state)
+    if state then
+        print("Toggle On")
+    else
+        p  
+                Toggles.AntiA90:SetValue(true)
+            end
+
+            if not mainGame then return end
+            local module = mainGame:FindFirstChild("A90", true) or mainGame:FindFirstChild("_A90", true)
+        
+            if module then
+                module.Name = value and "_A90" or "A90"rint("Toggle Off")
