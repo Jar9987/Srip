@@ -9,15 +9,10 @@ local Player = game.Players.LocalPlayer --This Will Reveal The Player Name
 }) --This Will Load The Script Hub
 
 function MakeScriptHub()
-         loadstring(game:HttpGet('https://raw.githubusercontent.com/Jar9987/Srip/main/MNTIENGVIET'))() --Put The Script That Will Load If The Key Is Correct Here
+         loadstring(game:HttpGet('https://raw.githubusercontent.com/Jar9987/BF-TESTER/refs/heads/main/LOADER.lua'))() --Put The Script That Will Load If The Key Is Correct Here
 end
 
-OrionLib:MakeNotification({
-	Name = "JOIN DISCORD SEVER TO GET KEY",
-	Content = "discord.com/MNHUB",
-	Image = "rbxassetid://4483345998",
-	Time = 5
-})
+
 
 --[[
 Title = <string> - The title of the notification.
@@ -33,7 +28,7 @@ OrionLib:MakeNotification({
 	Time = 5
 }) --Notification
 
-getgenv().Key = "MN-CP801" --Put The Correct Key Here
+getgenv().Key = "3fv4bct3dh5bd93tgva5290oyb45w" --Put The Correct Key Here
 getgenv().KeyInput = "string" --Require For The Key To Work
 
 local Tab = Window:MakeTab({
@@ -93,7 +88,7 @@ Tab:AddButton({
 Tab:AddButton({
 	Name = "Copy Key",
 	Callback = function()
-      		setclipboard("https://rekonise.com/start-o5x3x") --This Will Copy The Link Of The Key
+      		setclipboard("https://gateway.platoboost.com/l/67654/?8sflinkvts-tester_sciptfree/key") --This Will Copy The Link Of The Key
   	end    
 }) 
     
